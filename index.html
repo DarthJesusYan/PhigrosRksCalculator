@@ -1,0 +1,562 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>RKS Calculator</title>
+    <script src="jquery.min.js"></script>
+    <script src="index.js"></script>
+    <link rel="stylesheet" type="text/css" href="index.css">
+</head>
+
+<body>
+    <!--div-->
+    <div style="
+        position: fixed;
+        left: 0;
+        top: 0;
+        height: 13em;
+        width: 100%;
+        border-bottom: 1px solid;
+        background-color: white;
+        z-index: 9999;
+        ">
+        <h1>&nbsp;&nbsp;&nbsp;&nbsp;RKS Calculator</h1>
+        <text>&nbsp;&nbsp;&nbsp;&nbsp;</text><text>Difficulty </text>
+        <text id="diffshow"></text>
+        <br />
+        <text>&nbsp;&nbsp;&nbsp;&nbsp;</text><text>Accuracy(%) </text>
+        <input type="text" id="acc">
+        <br />
+        <text>&nbsp;&nbsp;&nbsp;&nbsp;</text><input type="button" id="calc" value="calculate">
+        <br />
+        <br />
+        <div><text>&nbsp;&nbsp;&nbsp;&nbsp;</text><b><u id="result">0</u></b></div>
+        <br />
+    </div>
+    <div>
+        <div class="tab">
+            <p style="border-bottom: 1px solid;"><b>&nbsp;&nbsp;&nbsp;&nbsp;Select Song</b></p>
+            <button class="tablinks" onclick="openChap(event, 'Single')">Single</button>
+            <button class="tablinks" onclick="openChap(event, 'Lagacy')">Lagacy</button>
+            <button class="tablinks" onclick="openChap(event, 'Chapter 4')">Chapter 4</button>
+            <button class="tablinks" onclick="openChap(event, 'Chapter 5')">Chapter 5</button>
+            <button class="tablinks" onclick="openChap(event, 'Chapter 6')">Chapter 6</button>
+            <button class="tablinks" onclick="openChap(event, 'Side 1')">Side 1</button>
+            <button class="tablinks" onclick="openChap(event, 'Ex-闫东炜')">Ex-闫东炜</button>
+            <button class="tablinks" onclick="openChap(event, 'Ex-Rising Sun Traxx')">Ex-Rising Sun Traxx</button>
+            <button class="tablinks" onclick="openChap(event, 'Ex-HyuN')">Ex-HyuN</button>
+            <button class="tablinks" onclick="openChap(event, 'Ex-GOOD')">Ex-GOOD</button>
+        </div>
+
+        <div id="Single" class="tabcontent">
+            <p>dB doll
+                <input type="button" value="EZ" onclick="diffi(event, 1.6);">
+                <input type="button" value="HD" onclick="diffi(event, 3.6);">
+                <input type="button" value="IN" onclick="diffi(event, 7.2);">
+            </p>
+            <p>もぺもぺ
+                <input type="button" value="EZ" onclick="diffi(event, 3.4);">
+                <input type="button" value="HD" onclick="diffi(event, 8.5);">
+                <input type="button" value="IN" onclick="diffi(event, 11.1);">
+                <input type="button" value="AT" onclick="diffi(event, 14.3);">
+            </p>
+            <p>Next Time
+                <input type="button" value="EZ" onclick="diffi(event, 4.8);">
+                <input type="button" value="HD" onclick="diffi(event, 9.2);">
+                <input type="button" value="IN" onclick="diffi(event, 12.6);">
+            </p>
+            <p>Dash
+                <input type="button" value="EZ" onclick="diffi(event, 2.5);">
+                <input type="button" value="HD" onclick="diffi(event, 5.7);">
+                <input type="button" value="IN" onclick="diffi(event, 11.5);">
+            </p>
+            <p>Rubbish Sorting
+                <input type="button" value="EZ" onclick="diffi(event, 3.3);">
+                <input type="button" value="HD" onclick="diffi(event, 9.4);">
+                <input type="button" value="IN" onclick="diffi(event, 12.8);">
+            </p>
+            <p>云女孩
+                <input type="button" value="EZ" onclick="diffi(event, 2.8);">
+                <input type="button" value="HD" onclick="diffi(event, 9.9);">
+                <input type="button" value="IN" onclick="diffi(event, 12.8);">
+            </p>
+            <p>Sparkle New Life
+                <input type="button" value="EZ" onclick="diffi(event, 4.2);">
+                <input type="button" value="HD" onclick="diffi(event, 9.2);">
+                <input type="button" value="IN" onclick="diffi(event, 12.9);">
+            </p>
+            <p>萤火虫の怨
+                <input type="button" value="EZ" onclick="diffi(event, 4.3);">
+                <input type="button" value="HD" onclick="diffi(event, 10.6);">
+                <input type="button" value="IN" onclick="diffi(event, 13.4);">
+            </p>
+            <p>Dead Soul
+                <input type="button" value="EZ" onclick="diffi(event, 4.3);">
+                <input type="button" value="HD" onclick="diffi(event, 11.7);">
+                <input type="button" value="IN" onclick="diffi(event, 13.4);">
+            </p>
+            <p>Snow Desert
+                <input type="button" value="EZ" onclick="diffi(event, 5.1);">
+                <input type="button" value="HD" onclick="diffi(event, 9.6);">
+                <input type="button" value="IN" onclick="diffi(event, 13.6);">
+            </p>
+            <p>Electron
+                <input type="button" value="EZ" onclick="diffi(event, 3.7);">
+                <input type="button" value="HD" onclick="diffi(event, 10.4);">
+                <input type="button" value="IN" onclick="diffi(event, 13.6);">
+            </p>
+            <p>万吨匿名信
+                <input type="button" value="EZ" onclick="diffi(event, 5.7);">
+                <input type="button" value="HD" onclick="diffi(event, 9.7);">
+                <input type="button" value="IN" onclick="diffi(event, 13.6);">
+            </p>
+            <p>Äventyr
+                <input type="button" value="EZ" onclick="diffi(event, 2.3);">
+                <input type="button" value="HD" onclick="diffi(event, 9.4);">
+                <input type="button" value="IN" onclick="diffi(event, 13.7);">
+            </p>
+            <p>风屿
+                <input type="button" value="EZ" onclick="diffi(event, 5.9);">
+                <input type="button" value="HD" onclick="diffi(event, 10.3);">
+                <input type="button" value="IN" onclick="diffi(event, 13.7);">
+            </p>
+            <p>Get Back
+                <input type="button" value="EZ" onclick="diffi(event, 6.6);">
+                <input type="button" value="HD" onclick="diffi(event, 11.4);">
+                <input type="button" value="IN" onclick="diffi(event, 13.8);">
+            </p>
+            <p>Orthodox
+                <input type="button" value="EZ" onclick="diffi(event, 4.7);">
+                <input type="button" value="HD" onclick="diffi(event, 10.6);">
+                <input type="button" value="IN" onclick="diffi(event, 14.2);">
+            </p>
+            <p>End Me
+                <input type="button" value="EZ" onclick="diffi(event, 5.8);">
+                <input type="button" value="HD" onclick="diffi(event, 7.5);">
+                <input type="button" value="IN" onclick="diffi(event, 14.3);">
+            </p>
+            <p>狂喜蘭舞
+                <input type="button" value="EZ" onclick="diffi(event, 6.8);">
+                <input type="button" value="HD" onclick="diffi(event, 10.8);">
+                <input type="button" value="IN" onclick="diffi(event, 14.4);">
+                <input type="button" value="AT" onclick="diffi(event, 16.1);">
+            </p>
+            <p>Parallel Retrogression
+                <input type="button" value="EZ" onclick="diffi(event, 6.8);">
+                <input type="button" value="HD" onclick="diffi(event, 10.7);">
+                <input type="button" value="IN" onclick="diffi(event, 14.4);">
+            </p>
+            <p>The Mountain Eater
+                <input type="button" value="EZ" onclick="diffi(event, 4.3);">
+                <input type="button" value="HD" onclick="diffi(event, 9.1);">
+                <input type="button" value="IN" onclick="diffi(event, 14.4);">
+            </p>
+            <p>Find_Me
+                <input type="button" value="EZ" onclick="diffi(event, 5.7);">
+                <input type="button" value="HD" onclick="diffi(event, 10.5);">
+                <input type="button" value="IN" onclick="diffi(event, 14.4);">
+            </p>
+            <p>Drop It
+                <input type="button" value="EZ" onclick="diffi(event, 3.8);">
+                <input type="button" value="HD" onclick="diffi(event, 9.6);">
+                <input type="button" value="IN" onclick="diffi(event, 14.4);">
+            </p>
+            <p>MARENOL
+                <input type="button" value="EZ" onclick="diffi(event, 1.9);">
+                <input type="button" value="HD" onclick="diffi(event, 10.2);">
+                <input type="button" value="IN" onclick="diffi(event, 14.5);">
+            </p>
+            <p>Magenta Potion
+                <input type="button" value="EZ" onclick="diffi(event, 6.3);">
+                <input type="button" value="HD" onclick="diffi(event, 11.3);">
+                <input type="button" value="IN" onclick="diffi(event, 14.5);">
+            </p>
+            <p>Hardcore Kwaya
+                <input type="button" value="EZ" onclick="diffi(event, 4.3);">
+                <input type="button" value="HD" onclick="diffi(event, 9.2);">
+                <input type="button" value="IN" onclick="diffi(event, 14.6);">
+            </p>
+            <p>Cervelle Connexion
+                <input type="button" value="EZ" onclick="diffi(event, 4.8);">
+                <input type="button" value="HD" onclick="diffi(event, 11.3);">
+                <input type="button" value="IN" onclick="diffi(event, 14.5);">
+            </p>
+            <p>Träne
+                <input type="button" value="EZ" onclick="diffi(event, 1.5);">
+                <input type="button" value="HD" onclick="diffi(event, 6.7);">
+                <input type="button" value="IN" onclick="diffi(event, 14.5);">
+            </p>
+            <p>Speed Up!
+                <input type="button" value="EZ" onclick="diffi(event, 4.3);">
+                <input type="button" value="HD" onclick="diffi(event, 10.3);">
+                <input type="button" value="IN" onclick="diffi(event, 14.6);">
+            </p>
+            <p>modulus
+                <input type="button" value="EZ" onclick="diffi(event, 3.7);">
+                <input type="button" value="HD" onclick="diffi(event, 10.1);">
+                <input type="button" value="IN" onclick="diffi(event, 15.4);">
+            </p>
+            <p>Khronostasis Katharsis
+                <input type="button" value="EZ" onclick="diffi(event, 5.2);">
+                <input type="button" value="HD" onclick="diffi(event, 10.8);">
+                <input type="button" value="IN" onclick="diffi(event, 14.6);">
+            </p>
+            <p>Starduster
+                <input type="button" value="EZ" onclick="diffi(event, 5.6);">
+                <input type="button" value="HD" onclick="diffi(event, 11.4);">
+                <input type="button" value="IN" onclick="diffi(event, 14.8);">
+            </p>
+            <p>Burn
+                <input type="button" value="EZ" onclick="diffi(event, 4.2);">
+                <input type="button" value="HD" onclick="diffi(event, 10.6);">
+                <input type="button" value="IN" onclick="diffi(event, 14.8);">
+            </p>
+            <p>Doppelganger
+                <input type="button" value="EZ" onclick="diffi(event, 4.8);">
+                <input type="button" value="HD" onclick="diffi(event, 9.4);">
+                <input type="button" value="IN" onclick="diffi(event, 14.8);">
+            </p>
+            <p>Sein
+                <input type="button" value="EZ" onclick="diffi(event, 4.6);">
+                <input type="button" value="HD" onclick="diffi(event, 9.2);">
+                <input type="button" value="IN" onclick="diffi(event, 14.9);">
+            </p>
+            <p>雪降り、メリクリ
+                <input type="button" value="EZ" onclick="diffi(event, 5.6);">
+                <input type="button" value="HD" onclick="diffi(event, 9.3);">
+                <input type="button" value="IN" onclick="diffi(event, 15.3);">
+            </p>
+            <p>Aleph-0
+                <input type="button" value="EZ" onclick="diffi(event, 4.5);">
+                <input type="button" value="HD" onclick="diffi(event, 12.2);">
+                <input type="button" value="IN" onclick="diffi(event, 15.5);">
+            </p>
+            <p>SIGMA
+                <input type="button" value="EZ" onclick="diffi(event, 4.8);">
+                <input type="button" value="HD" onclick="diffi(event, 11.5);">
+                <input type="button" value="IN" onclick="diffi(event, 15.6);">
+            </p>
+            <p>Palescreen
+                <input type="button" value="EZ" onclick="diffi(event, 5.6);">
+                <input type="button" value="HD" onclick="diffi(event, 11.8);">
+                <input type="button" value="IN" onclick="diffi(event, 15.5);">
+            </p>
+            <p>RIPPER
+                <input type="button" value="EZ" onclick="diffi(event, 7.8);">
+                <input type="button" value="HD" onclick="diffi(event, 12.4);">
+                <input type="button" value="IN" onclick="diffi(event, 15.7);">
+            </p>
+        </div>
+
+        <div id="Lagacy" class="tabcontent">
+            <p>Glaciaxion
+                <input type="button" value="EZ" onclick="diffi(event, 2.7);">
+                <input type="button" value="HD" onclick="diffi(event, 5.4);">
+                <input type="button" value="IN" onclick="diffi(event, 11.2);">
+            </p>
+            <p>Eradication Catastrophe
+                <input type="button" value="EZ" onclick="diffi(event, 3.5);">
+                <input type="button" value="HD" onclick="diffi(event, 7.5);">
+                <input type="button" value="IN" onclick="diffi(event, 12.1);">
+            </p>
+            <p>Credits
+                <input type="button" value="EZ" onclick="diffi(event, 4.4);">
+                <input type="button" value="HD" onclick="diffi(event, 10.4);">
+                <input type="button" value="IN" onclick="diffi(event, 13.7);">
+            </p>
+            <p>Dlyrotz
+                <input type="button" value="EZ" onclick="diffi(event, 6.5);">
+                <input type="button" value="HD" onclick="diffi(event, 11.7);">
+                <input type="button" value="IN" onclick="diffi(event, 14.6);">
+            </p>
+            <p>Engine x Start!!
+                <input type="button" value="EZ" onclick="diffi(event, 4.7);">
+                <input type="button" value="HD" onclick="diffi(event, 10.5);">
+                <input type="button" value="IN" onclick="diffi(event, 13.4);">
+            </p>
+            <p>光
+                <input type="button" value="EZ" onclick="diffi(event, 4.9);">
+                <input type="button" value="HD" onclick="diffi(event, 8.4);">
+                <input type="button" value="IN" onclick="diffi(event, 13.6);">
+            </p>
+            <p>Winter↑cube↓
+                <input type="button" value="EZ" onclick="diffi(event, 6.7);">
+                <input type="button" value="HD" onclick="diffi(event, 11.6);">
+                <input type="button" value="IN" onclick="diffi(event, 13.4);">
+            </p>
+            <p>混乱-Confusion
+                <input type="button" value="EZ" onclick="diffi(event, 5.3);">
+                <input type="button" value="HD" onclick="diffi(event, 11.4);">
+                <input type="button" value="IN" onclick="diffi(event, 13.9);">
+            </p>
+            <p>Cipher : /2&//&lt;|0
+                <input type="button" value="EZ" onclick="diffi(event, 6.8);">
+                <input type="button" value="HD" onclick="diffi(event, 10.8);">
+                <input type="button" value="IN" onclick="diffi(event, 14.9);">
+            </p>
+            <p>FULi AUTO SHOOTER
+                <input type="button" value="EZ" onclick="diffi(event, 4.1);">
+                <input type="button" value="HD" onclick="diffi(event, 11.3);">
+                <input type="button" value="IN" onclick="diffi(event, 15.3);">
+            </p>
+            <p>HumaN
+                <input type="button" value="EZ" onclick="diffi(event, 5.6);">
+                <input type="button" value="HD" onclick="diffi(event, 8.8);">
+                <input type="button" value="IN" onclick="diffi(event, 13.2);">
+            </p>
+            <p>[PRAW]
+                <input type="button" value="EZ" onclick="diffi(event, 4.4);">
+                <input type="button" value="HD" onclick="diffi(event, 11.8);">
+                <input type="button" value="IN" onclick="diffi(event, 14.6);">
+            </p>
+            <p>Cereris
+                <input type="button" value="EZ" onclick="diffi(event, 6.9);">
+                <input type="button" value="HD" onclick="diffi(event, 11.2);">
+                <input type="button" value="IN" onclick="diffi(event, 14.8);">
+            </p>
+            <p>Pixel Rebelz
+                <input type="button" value="EZ" onclick="diffi(event, 4.5);">
+                <input type="button" value="HD" onclick="diffi(event, 11.9);">
+                <input type="button" value="IN" onclick="diffi(event, 14.3);">
+            </p>
+            <p>Non-Melodic Ragez
+                <input type="button" value="EZ" onclick="diffi(event, 5.8);">
+                <input type="button" value="HD" onclick="diffi(event, 10.5);">
+                <input type="button" value="IN" onclick="diffi(event, 15.8);">
+            </p>
+        </div>
+        <div id="Chapter 4" class="tabcontent">
+            <p>Sultan Rage
+                <input type="button" value="EZ" onclick="diffi(event, 3.9);">
+                <input type="button" value="HD" onclick="diffi(event, 8.7);">
+                <input type="button" value="IN" onclick="diffi(event, 12.2);">
+            </p>
+            <p>Class Memories
+                <input type="button" value="EZ" onclick="diffi(event, 4.5);">
+                <input type="button" value="HD" onclick="diffi(event, 8.9);">
+                <input type="button" value="IN" onclick="diffi(event, 12.8);">
+            </p>
+            <p>-SURREALISM-
+                <input type="button" value="EZ" onclick="diffi(event, 4.6);">
+                <input type="button" value="HD" onclick="diffi(event, 7.8);">
+                <input type="button" value="IN" onclick="diffi(event, 13.4);">
+            </p>
+            <p>Bonus Time
+                <input type="button" value="EZ" onclick="diffi(event, 4.7);">
+                <input type="button" value="HD" onclick="diffi(event, 9.3);">
+                <input type="button" value="IN" onclick="diffi(event, 14.2);">
+            </p>
+            <p>ENERGY SYNERGY MATRIX
+                <input type="button" value="EZ" onclick="diffi(event, 5.9);">
+                <input type="button" value="HD" onclick="diffi(event, 10.7);">
+                <input type="button" value="IN" onclick="diffi(event, 14.8);">
+            </p>
+        </div>
+        <div id="Chapter 5" class="tabcontent">
+            <p>NYA!!!
+                <input type="button" value="EZ" onclick="diffi(event, 1.8);">
+                <input type="button" value="HD" onclick="diffi(event, 8.6);">
+                <input type="button" value="IN" onclick="diffi(event, 12.9);">
+            </p>
+            <p>JunXion Between Life And Death
+                <input type="button" value="EZ" onclick="diffi(event, 3.2)">
+                <input type="button" value="HD" onclick="diffi(event, 8.7);">
+                <input type="button" value="IN" onclick="diffi(event, 13.3);">
+            </p>
+            <p>cryout
+                <input type="button" value="EZ" onclick="diffi(event, 4.3);">
+                <input type="button" value="HD" onclick="diffi(event, 9.9);">
+                <input type="button" value="IN" onclick="diffi(event, 13.7);">
+            </p>
+            <p>Reimei
+                <input type="button" value="EZ" onclick="diffi(event, 6.8);">
+                <input type="button" value="HD" onclick="diffi(event, 12.7);">
+                <input type="button" value="IN" onclick="diffi(event, 15.3);">
+            </p>
+            <p>尊師 ～The Guru～
+                <input type="button" value="EZ" onclick="diffi(event, 3.6);">
+                <input type="button" value="HD" onclick="diffi(event, 9.4);">
+                <input type="button" value="IN" onclick="diffi(event, 15.2);">
+            </p>
+            <p>Spasmodic
+                <input type="button" value="EZ" onclick="diffi(event, 7.9);">
+                <input type="button" value="HD" onclick="diffi(event, 12.6);">
+                <input type="button" value="IN" onclick="diffi(event, 15.4);">
+                <input type="button" value="AT" onclick="diffi(event, 16.4);">
+            </p>
+            <p>Leave All Behind
+                <input type="button" value="EZ" onclick="diffi(event, 2.5);">
+                <input type="button" value="HD" onclick="diffi(event, 6.4);">
+                <input type="button" value="IN" onclick="diffi(event, 12.7);">
+            </p>
+        </div>
+        <div id="Chapter 6" class="tabcontent">
+            <p>Colorful Days♪
+                <input type="button" value="EZ" onclick="diffi(event, 4.6);">
+                <input type="button" value="HD" onclick="diffi(event, 7.1);">
+                <input type="button" value="IN" onclick="diffi(event, 12.7);">
+            </p>
+            <p>micro.wav
+                <input type="button" value="EZ" onclick="diffi(event, 6.2);">
+                <input type="button" value="HD" onclick="diffi(event, 10.7);">
+                <input type="button" value="IN" onclick="diffi(event, 14.5);">
+            </p>
+            <p>重生
+                <input type="button" value="EZ" onclick="diffi(event, 6.8);">
+                <input type="button" value="HD" onclick="diffi(event, 9.3);">
+                <input type="button" value="IN" onclick="diffi(event, 14.6);">
+            </p>
+            <p>NO ONE YES MAN
+                <input type="button" value="EZ" onclick="diffi(event, 5.5);">
+                <input type="button" value="HD" onclick="diffi(event, 11.8);">
+                <input type="button" value="IN" onclick="diffi(event, 15.1);">
+            </p>
+            <p>望影の方舟Six
+                <input type="button" value="EZ" onclick="diffi(event, 6.3);">
+                <input type="button" value="HD" onclick="diffi(event, 12.9);">
+                <input type="button" value="IN" onclick="diffi(event, 15.9);">
+            </p>
+            <p>Igallta
+                <input type="button" value="EZ" onclick="diffi(event, 7.7);">
+                <input type="button" value="HD" onclick="diffi(event, 12.7);">
+                <input type="button" value="IN" onclick="diffi(event, 15.8);">
+                <input type="button" value="AT" onclick="diffi(event, 16.7);">
+            </p>
+        </div>
+        <div id="Side 1" class="tabcontent">
+            <p>Ποσειδών
+                <input type="button" value="EZ" onclick="diffi(event, 4.7);">
+                <input type="button" value="HD" onclick="diffi(event, 8.4);">
+                <input type="button" value="IN" onclick="diffi(event, 12.8);">
+            </p>
+            <p>WATER
+                <input type="button" value="EZ" onclick="diffi(event, 4.5);">
+                <input type="button" value="HD" onclick="diffi(event, 9.4);">
+                <input type="button" value="IN" onclick="diffi(event, 13.6);">
+            </p>
+            <p>Miracle Forest
+                <input type="button" value="EZ" onclick="diffi(event, 2.6);">
+                <input type="button" value="HD" onclick="diffi(event, 9.8);">
+                <input type="button" value="IN" onclick="diffi(event, 13.9);">
+            </p>
+            <p>MOBILYS
+                <input type="button" value="EZ" onclick="diffi(event, 4.8);">
+                <input type="button" value="HD" onclick="diffi(event, 9.7);">
+                <input type="button" value="IN" onclick="diffi(event, 14.4);">
+            </p>
+            <p>Lyrith -迷宮リリス-
+                <input type="button" value="EZ" onclick="diffi(event, 5.2);">
+                <input type="button" value="HD" onclick="diffi(event, 11.6);">
+                <input type="button" value="IN" onclick="diffi(event, 15.7);">
+                <input type="button" value="AT" onclick="diffi(event, 16.3);">
+            </p>
+        </div>
+        <div id="Ex-闫东炜" class="tabcontent">
+            <p>Aphasia
+                <input type="button" value="EZ" onclick="diffi(event, 4.2);">
+                <input type="button" value="HD" onclick="diffi(event, 8.8);">
+                <input type="button" value="IN" onclick="diffi(event, 13.1);">
+            </p>
+            <p>开心病
+                <input type="button" value="EZ" onclick="diffi(event, 3.7);">
+                <input type="button" value="HD" onclick="diffi(event, 9.8);">
+                <input type="button" value="IN" onclick="diffi(event, 13.7);">
+            </p>
+            <p>華灯爱
+                <input type="button" value="EZ" onclick="diffi(event, 5.5);">
+                <input type="button" value="HD" onclick="diffi(event, 9.3);">
+                <input type="button" value="IN" onclick="diffi(event, 13.8);">
+            </p>
+        </div>
+        <div id="Ex-Rising Sun Traxx" class="tabcontent">
+            <p>Another Me
+                <input type="button" value="EZ" onclick="diffi(event, 1.7);">
+                <input type="button" value="HD" onclick="diffi(event, 5.6);">
+                <input type="button" value="IN" onclick="diffi(event, 13.2);">
+            </p>
+            <p>mechanted
+                <input type="button" value="EZ" onclick="diffi(event, 2.7);">
+                <input type="button" value="HD" onclick="diffi(event, 11.3);">
+                <input type="button" value="IN" onclick="diffi(event, 14.7);">
+            </p>
+            <p>life flashes before weeb eyes
+                <input type="button" value="EZ" onclick="diffi(event, 6.7);">
+                <input type="button" value="HD" onclick="diffi(event, 11.9);">
+                <input type="button" value="IN" onclick="diffi(event, 14.8);">
+            </p>
+            <p>Break Through The Barrier
+                <input type="button" value="EZ" onclick="diffi(event, 5.9);">
+                <input type="button" value="HD" onclick="diffi(event, 10.8);">
+                <input type="button" value="IN" onclick="diffi(event, 14.9);">
+            </p>
+            <p>Chronostasis
+                <input type="button" value="EZ" onclick="diffi(event, 6.8);">
+                <input type="button" value="HD" onclick="diffi(event, 11.6);">
+                <input type="button" value="IN" onclick="diffi(event, 15.9);">
+            </p>
+        </div>
+        <div id="Ex-HyuN" class="tabcontent">
+            <p>Infinity Heaven
+                <input type="button" value="EZ" onclick="diffi(event, 3.3);">
+                <input type="button" value="HD" onclick="diffi(event, 8.4);">
+                <input type="button" value="IN" onclick="diffi(event, 13.6);">
+            </p>
+            <p>Disorder
+                <input type="button" value="EZ" onclick="diffi(event, 5.4);">
+                <input type="button" value="HD" onclick="diffi(event, 9.8);">
+                <input type="button" value="IN" onclick="diffi(event, 14.7);">
+            </p>
+            <p>CROSS†SOUL
+                <input type="button" value="EZ" onclick="diffi(event, 7.7);">
+                <input type="button" value="HD" onclick="diffi(event, 12.8);">
+                <input type="button" value="IN" onclick="diffi(event, 15.9);">
+            </p>
+        </div>
+        <div id="Ex-GOOD" class="tabcontent">
+            <p>GOODTEK
+                <input type="button" value="EZ" onclick="diffi(event, 5.8);">
+                <input type="button" value="HD" onclick="diffi(event, 10.8);">
+                <input type="button" value="IN" onclick="diffi(event, 14.2);">
+            </p>
+            <p>GOODBOUNCE
+                <input type="button" value="EZ" onclick="diffi(event, 5.7);">
+                <input type="button" value="HD" onclick="diffi(event, 11.6);">
+                <input type="button" value="IN" onclick="diffi(event, 14.4);">
+            </p>
+            <p>GOODWORLD
+                <input type="button" value="EZ" onclick="diffi(event, 3.2);">
+                <input type="button" value="HD" onclick="diffi(event, 11.4);">
+                <input type="button" value="IN" onclick="diffi(event, 14.5);">
+            </p>
+            <p>GOODFORTUNE
+                <input type="button" value="EZ" onclick="diffi(event, 7.3);">
+                <input type="button" value="HD" onclick="diffi(event, 8.7);">
+                <input type="button" value="IN" onclick="diffi(event, 15.4);">
+            </p>
+            <p>GOODRAGE
+                <input type="button" value="EZ" onclick="diffi(event, 4.6);">
+                <input type="button" value="HD" onclick="diffi(event, 7.8);">
+                <input type="button" value="IN" onclick="diffi(event, 15.8);">
+            </p>
+        </div>
+        <br />
+    </div>
+    <!--/div-->
+    <script>
+        var dif = 0;
+
+        function diffi(evt, degree) {
+            dif = degree;
+            document.getElementById("diffshow").innerHTML = dif;
+        }
+
+        $("#calc").click(function() {
+            var acc = document.getElementById("acc").value;
+            scr = Math.round((((acc - 55) / 45) ** 2) * dif / 20 * 100) / 100;
+            $("#result").text(scr);
+        })
+    </script>
+</body>
+
+</html>
